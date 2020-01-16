@@ -1,0 +1,22 @@
+---
+name: chatops.checkout_ansible_git
+action_ref: st2_chatops_aliases.checkout_ansible_git
+description: Checkout exbet.io ansible repo
+formats:
+  - display: "Checking out exbetio/ansible to controller"
+    representation:
+      - "Checking out exbetio/ansible to controller"
+result:
+  format: |
+    Checkout `{{ execution.parameters.command }}`
+    {% if execution.result.stderr %}
+    *Exit Status*: `{{ execution.result.return_code }}`
+    *Stderr:* ```{{ execution.result.stderr }}```
+    *Stdout:*
+    {% endif %}
+    ```{{ execution.result.stdout }}```
+  extra:
+    slack:
+      color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
+      footer: "{{ execution.id }}"
+      footer_icon: "https://stackstorm.com/wp/wp-content/uploads/2015/01/favicon.png"
