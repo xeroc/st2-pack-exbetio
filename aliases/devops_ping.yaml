@@ -7,7 +7,7 @@ immutable_parameters:
  inventory_file: /opt/stackstorm-data/exbetio-ansible/hosts
 description: "Run Ansible command on local machine"
 formats:
-  - display: "devops ping"
+  - display: "devops ping [host]"
     representation:
       - "devops ping {{ host=all }}"
 result:
@@ -16,6 +16,10 @@ result:
     {% if execution.result.stderr %}*Stdout:* {% endif %}
     ```{{ execution.result.stdout }}```
     {% if execution.result.stderr %}*Stderr:* ```{{ execution.result.stderr }}```{% endif %}
+    *Execution Overview*
+    {% for host, result in execution.result.stdout.stats.iteritems() %}
+        {{ host }}: ```{{ result }}```
+    {% endfor %}
   extra:
     slack:
       color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
