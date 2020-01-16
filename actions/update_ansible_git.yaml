@@ -12,7 +12,9 @@ parameters:
     immutable: true
   timeout:
     default: 6000
-  cwd: /opt/exbet-ansible
+  cwd:
+    immutable: true
+    default: /opt/
   cmd:
     description: "Command to run"
     immutable: true
