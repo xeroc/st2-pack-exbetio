@@ -1,11 +1,11 @@
 ---
-name: chatops.checkout_ansible_git
+name: chatops.update_ansible_git
 action_ref: exbetio.ansible_clone
-description: Checkout exbet.io ansible repo
+description: Update exbet.io ansible repo
 formats:
-  - display: "checkout devops ansible"
+  - display: "update devops ansible"
     representation:
-      - "checkout devops ansible"
+      - "update devops ansible"
 result:
   format: |
     {% if execution.status == 'succeeded' -%}

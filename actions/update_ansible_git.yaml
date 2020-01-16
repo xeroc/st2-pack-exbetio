@@ -1,0 +1,13 @@
+---
+name: ansible_update
+runner_type: local-shell-cmd
+description: "Update a repository"
+enabled: true
+entry_point: ''
+parameters:
+  cwd:
+   immutable: true
+   default: /opt/stackstorm-data/exbetio-ansible
+  cmd:
+    default: "git pull -f"
+    immutable: true
