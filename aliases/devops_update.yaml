@@ -1,6 +1,6 @@
 ---
 name: chatops.update_ansible_git
-action_ref: exbetio.ansible_clone
+action_ref: exbetio.ansible_update
 description: Update exbet.io ansible repo
 formats:
   - display: devops update-repo
