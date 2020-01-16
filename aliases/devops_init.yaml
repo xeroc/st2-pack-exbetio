@@ -1,7 +1,7 @@
 ---
 name: chatops.checkout_ansible_git
 #action_ref: exbetio.ansible_clone
-action_ref: git clone
+action_ref: git.clone
 immutable_parameters:
  source: git@bitbucket.org:exbet/ansible.git
  ref: master
