@@ -8,13 +8,11 @@ formats:
       - "Checking out exbetio/ansible to controller"
 result:
   format: |
-    Checkout `{{ execution.parameters.command }}`
-    {% if execution.result.stderr %}
-    *Exit Status*: `{{ execution.result.return_code }}`
+    {% if execution.status == 'succeeded' %}Output: ```{{ execution.result.stdout }}```{~}{% else %}
+    *Exit Code:* `{{ execution.result.return_code }}`
     *Stderr:* ```{{ execution.result.stderr }}```
-    *Stdout:*
+    *Stdout:* ```{{ execution.result.stdout }}```
     {% endif %}
-    ```{{ execution.result.stdout }}```
   extra:
     slack:
       color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
