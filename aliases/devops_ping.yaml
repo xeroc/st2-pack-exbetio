@@ -7,9 +7,9 @@ immutable_parameters:
  inventory_file: /opt/stackstorm-data/exbetio-ansible/hosts
 description: "Run Ansible command on local machine"
 formats:
-  - display: "devops ping [host]"
+  - display: "devops ping"
     representation:
-      - "devops ping {{ host=all }}"
+      - "devops ping"
 result:
   format: |
     Ansible command `{{ execution.parameters.args }}` result: {~}
