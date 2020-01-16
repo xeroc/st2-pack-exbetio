@@ -1,6 +1,6 @@
 ---
 name: chatops.checkout_ansible_git
-action_ref: exbetio.chatops.checkout_ansible_git
+action_ref: exbetio.checkout_ansible_git
 description: Checkout exbet.io ansible repo
 formats:
   - display: "checkout devops ansible"
