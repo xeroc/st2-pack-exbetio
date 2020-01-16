@@ -1,10 +1,6 @@
 ---
 name: chatops.checkout_ansible_git
 action_ref: exbetio.ansible_clone
-immutable_parameters:
- source: git@bitbucket.org:exbet/ansible.git
- ref: master
- destination: /opt/exbetio-ansible
 description: Checkout exbet.io ansible repo
 formats:
   - display: "checkout devops ansible"
