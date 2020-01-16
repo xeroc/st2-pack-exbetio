@@ -3,9 +3,9 @@ name: chatops.checkout_ansible_git
 action_ref: st2_chatops_aliases.checkout_ansible_git
 description: Checkout exbet.io ansible repo
 formats:
-  - display: "Checking out exbetio/ansible to controller"
+  - display: "checkout devops ansible"
     representation:
-      - "Checking out exbetio/ansible to controller"
+      - "checkout devops ansible"
 result:
   format: |
     {% if execution.status == 'succeeded' %}Output: ```{{ execution.result.stdout }}```{~}{% else %}
