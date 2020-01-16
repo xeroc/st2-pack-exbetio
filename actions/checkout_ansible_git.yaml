@@ -1,6 +1,6 @@
 ---
 name: ansible_clone
-runner_type: remote-shell-cmd
+runner_type: local-shell-cmd
 description: "Clone a repository"
 enabled: true
 entry_point: ''
