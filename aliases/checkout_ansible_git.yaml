@@ -3,9 +3,9 @@ name: chatops.checkout_ansible_git
 action_ref: exbetio.ansible_clone
 description: Checkout exbet.io ansible repo
 formats:
-  - display: "checkout devops ansible"
+  - display: devops init-repo
     representation:
-      - "checkout devops ansible"
+      - devops init-repo
 result:
   format: |
     {% if execution.status == 'succeeded' -%}

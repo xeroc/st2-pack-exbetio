@@ -3,13 +3,14 @@ name: chatops.update_ansible_git
 action_ref: exbetio.ansible_clone
 description: Update exbet.io ansible repo
 formats:
-  - display: "update devops ansible"
+  - display: devops update-repo
     representation:
-      - "update devops ansible"
+      - devops update-repo
 result:
   format: |
     {% if execution.status == 'succeeded' -%}
-     Cloning done
+     Update done done
+     *Stdout:* ```{{ execution.result.stdout }}```
     {% else %}
     *Exit Code:* `{{ execution.result.return_code }}`
     *Stderr:* ```{{ execution.result.stderr }}```
