@@ -1,9 +1,8 @@
 ### Place information about your pack version here.
 ---
-name: st2-pack-exbetio
-description: demo pack
+ref: exbetio
+name: exbetio
+description: Exbet.io pack
 version: 0.1.0
 author: StackStorm Stanley
 email: stanley@stackstorm.com
-ref: empty
-
