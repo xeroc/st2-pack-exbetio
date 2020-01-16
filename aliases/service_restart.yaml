@@ -1,6 +1,6 @@
 ---
 name: chatops.ansible_service_restart
-action_ref: st2_chatops_aliases.service_restart
+action_ref: exbetio.chatops.service_restart
 description: Restart service on remote hosts
 formats:
   - display: "service restart <service_name> on <hosts>"

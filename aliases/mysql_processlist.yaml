@@ -1,6 +1,6 @@
 ---
 name: chatops.mysql_processlist
-action_ref: st2_chatops_aliases.mysql_processlist
+action_ref: exbetio.chatops.mysql_processlist
 description: Show MySQL processlist
 formats:
   - display: "show mysql processlist <hosts=db>"
