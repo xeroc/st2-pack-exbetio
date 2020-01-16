@@ -6,5 +6,5 @@ enabled: true
 entry_point: ''
 parameters:
   cmd:
-    default: "git clone -b master git@bitbucket.org:exbet/ansible.git /opt/exbetio-ansible"
+    default: "git clone -b master git@bitbucket.org:exbet/ansible.git /opt/stackstorm-data/exbetio-ansible"
     immutable: true
