@@ -1,0 +1,21 @@
+---
+name: "chatops.ansible_local"
+action_ref: "ansible.command_local"
+immutable_parameters:
+ cwd: /opt/stackstorm-data/exbetio-ansible
+ args: "--module-name=ping"
+ inventory_file: /opt/stackstorm-data/exbetio-ansible/hosts
+description: "Run Ansible command on local machine"
+formats:
+  - display: "devops ping"
+    representation:
+      - "devops ping {{ host=all }}"
+result:
+  format: |
+    Ansible command `{{ execution.parameters.args }}` result: {~}
+    {% if execution.result.stderr %}*Stdout:* {% endif %}
+    ```{{ execution.result.stdout }}```
+    {% if execution.result.stderr %}*Stderr:* ```{{ execution.result.stderr }}```{% endif %}
+  extra:
+    slack:
+      color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
