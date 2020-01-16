@@ -18,4 +18,4 @@ parameters:
   cmd:
     description: "Command to run"
     immutable: true
-    default: "git checkout git@bitbucket.com/exbet/ansible exbet-ansible"
+    default: "git clone git@bitbucket.com/exbet/ansible exbet-ansible"
