@@ -1,3 +1,4 @@
+# Make sure you have ansible inventory file `/etc/ansible/hosts` configured
 ---
 name: server_status
 description: Show server status by running ansible ping ad-hoc command
@@ -16,7 +17,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --module-name=ping"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts|replace('http://','')}} --module-name=ping"
   hosts:
     description: "Ansible hosts to ping"
     type: string

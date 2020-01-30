@@ -1,5 +1,5 @@
 ---
-name: chatops.update_ansible_git
+name: chatops.devops_update
 action_ref: exbetio.ansible_update
 description: Update exbet.io ansible repo
 formats:

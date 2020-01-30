@@ -1,5 +1,5 @@
 ---
-name: "chatops.ansible_local"
+name: "chatops.devops_ping"
 action_ref: "ansible.command"
 immutable_parameters:
  cwd: /opt/stackstorm-data/exbetio-ansible

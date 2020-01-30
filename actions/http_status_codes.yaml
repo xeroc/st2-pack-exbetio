@@ -1,7 +1,7 @@
 # Make sure you have ansible inventory file `/etc/ansible/hosts` configured
 ---
-name: mysql_processlist
-description: Show MySQL processlist
+name: http_status_codes
+description: Show sorted http status codes from nginx logs
 runner_type: local-shell-cmd
 entry_point: ""
 enabled: true
@@ -15,8 +15,8 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts|replace('http://','')}} --become --become-user=root -m shell -a \"mysql --execute='SHOW PROCESSLIST;' | expand -t 10\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts|replace('http://','')}} --become -m shell -a \"awk '{print \\$9}' /var/log/nginx/access.log|sort |uniq -c |sort -k1,1nr 2>/dev/null|column -t\""
   hosts:
     description: "Ansible hosts"
     type: string
-    default: db
+    required: true

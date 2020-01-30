@@ -1,6 +1,9 @@
+# this is command alias for `actions/update_package.yaml` action
+# allows to run ChatOps command: `update "bash" on "all"`
+# see playbook: `ansible/update_package.yaml`
 ---
 name: chatops.ansible_package_update
-action_ref: exbetio.update_package
+action_ref: st2_chatops_aliases.update_package
 description: Update package on remote hosts
 formats:
   - display: "update <package> on <hosts>"

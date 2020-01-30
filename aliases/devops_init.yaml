@@ -1,5 +1,5 @@
 ---
-name: chatops.checkout_ansible_git
+name: chatops.devops_update
 action_ref: exbetio.ansible_clone
 description: Checkout exbet.io ansible repo
 formats:
