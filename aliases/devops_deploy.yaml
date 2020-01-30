@@ -7,6 +7,7 @@ immutable_parameters:
  playbook: /opt/stackstorm-data/exbetio-ansible/exbet-everett.yaml
  check: True
  private_key: /home/stanley/.ssh/id_rsa
+ vault_password_file: /opt/stackstorm-data/exbetio-ansible-vault-password
 description: "Run Ansible command on local machine"
 formats:
   - "devops deploy everett {{tags}}"
