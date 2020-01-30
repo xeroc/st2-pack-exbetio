@@ -4,7 +4,7 @@ action_ref: "ansible.command"
 immutable_parameters:
  cwd: /opt/stackstorm-data/exbetio-ansible
  module_name: ping
- invento-ry_file: /opt/stackstorm-data/exbetio-ansible/hosts
+ inventory_file: /opt/stackstorm-data/exbetio-ansible/hosts
  private_key: /home/stanley/.ssh/stanley_rsa
 description: "Run Ansible command on local machine"
 formats:
