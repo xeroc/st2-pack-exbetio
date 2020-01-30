@@ -1,0 +1,23 @@
+---
+name: "chatops.devops_deploy_everett"
+action_ref: "ansible.playbook"
+immutable_parameters:
+ cwd: /opt/stackstorm-data/exbetio-ansible
+ inventory_file: /opt/stackstorm-data/exbetio-ansible/hosts
+ playbook: /opt/stackstorm-data/exbetio-ansible/exbet-everett.yaml
+ check: True
+ private_key: /home/stanley/.ssh/id_rsa
+description: "Run Ansible command on local machine"
+formats:
+  - "devops deploy everett {{tags}}"
+result:
+  format: |
+    *Execution Overview*
+    {% for host, result in execution.result.stdout.stats.iteritems() %}
+        {{ host }}: ```{{ result }}```
+    {% endfor %}
+  extra:
+    slack:
+      color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
+
+
